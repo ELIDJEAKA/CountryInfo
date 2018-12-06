@@ -1,0 +1,128 @@
+<div class="content-wrapper">
+  <!-- Container-fluid starts -->
+  <div class="container-fluid">
+    <!-- Main content starts -->
+    <div class="row">
+      <div class="col-sm-12 p-0">
+        <div class="main-header">
+          <h4>Box Shadow</h4>
+          <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+            <li class="breadcrumb-item">
+              <a href="index.html">
+                <i class="icofont icofont-home"></i>
+              </a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#!"> UI Elements </a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="box-shadow.html">Box Shadow</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!-- end of row -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-block">
+            <div class="row">
+              <div class="col-lg-6 offset-lg-3">
+                <p class="txt-highlight text-center m-t-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                </p>
+              </div>
+            </div>
+            <div class="row seacrh-header">
+              <div class="col-lg-8 offset-lg-2 col-sm-6 offset-sm-1 col-xs-12">
+                <div class="md-group-add-on">
+                  <span class="md-add-on">
+                    <i class="icofont icofont-list"></i>
+                  </span>
+                  <div class="md-input-wrapper">
+                    <input type="text" id="search-data" class="md-form-control" [(ngModel)]="term">
+                    <label>Search Your Countries</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Row start -->
+    <div class="row box-shadow">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-header-text">Top only</h5>
+            <div class="f-right">
+              <a href="" data-toggle="modal" data-target="#shadow-top">
+                <i class="icofont icofont-code-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="modal fade modal-flex" id="shadow-top" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h5 class="modal-title">Code Explanation for Top Side Shadow </h5>
+                </div>
+                <!-- end of modal-header -->
+                <div class="modal-body">
+                  <pre class="brush: html;">
+
+				                      	
+
+				                      	/* Use for Top Shadow 3 */
+
+				                      	&lt;div class="col-lg-4"&gt;
+				                      		&lt;div class="p-20 z-depth-top-3 waves-effect" data-toggle="tooltip" data-placement="top" title=".z-depth-top-3"&gt;
+				                      			&lt;p class="text-sm-center"&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&lt;/p&gt;
+				                      		&lt;/div&gt;
+				                      	&lt;/div&gt;
+
+				                      	
+				                      </pre>
+                </div>
+                <!-- end of modal-body -->
+              </div>
+              <!-- end of modal-content -->
+            </div>
+            <!-- end of modal-dialog -->
+          </div>
+          <!-- end of modal -->          
+           <div class="row card-block box-list">
+            <div class="col-lg-2" *ngFor="let country of countries | filter:term">   
+              <div class="card">
+                <img class="card-img-top" src="{{country.flag}}" alt="Card image cap">
+                <div class="card-block card-country">
+                  <h4 class="card-title">{{ country.name }}
+                    <!-- <a href="#">
+                      <i class="icofont icofont-question"></i>
+                    </a> -->
+                  </h4>
+                  <p class="card-text">Capital: {{country.capital}}<br/> Region: {{country.region}}</p>
+                  <p class="card-text">
+                    <!-- <button type="button" class="btn btn-primary waves-effect waves-light">Primary </button> -->
+                  </p>
+                </div>
+                <button type="button" class="btn btn-primary btn-block waves-effect waves-light">More <i class="icofont icofont-bubble-right"></i></button>
+              </div>
+            </div>
+          </div>
+          <!-- end of card-content -->
+        </div>
+        <!-- end of card-main -->
+      </div>
+      <!-- end of col-sm-12 -->
+    </div>
+    <!-- end of row -->
+
+  </div>
+  <!-- end of container fluid -->
+  <!-- Container-fluid ends -->
+</div>
