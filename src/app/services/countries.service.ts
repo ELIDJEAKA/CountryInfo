@@ -16,4 +16,8 @@ export class CountriesService {
     getCountryByName(name) {
         return this.http.get(`${API_URL}/name/${name}?fullText=true`);
     }
+    
+    getCountryByCallingCode(code){
+      return this.http.get(`${API_URL}/callingcode/${code}`);
+    }
 }

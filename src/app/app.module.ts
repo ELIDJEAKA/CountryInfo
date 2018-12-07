@@ -35,7 +35,7 @@ const API_KEY = environment.apiKey
     FormsModule,
     Ng2SearchPipeModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAqHR9KE3zTg621_Ee0DHfRzov18cVIFfc'
+      apiKey: API_KEY
     }),
     RouterModule.forRoot([
       {

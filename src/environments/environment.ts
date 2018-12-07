@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'https://restcountries.eu/rest/v2',
-  apiKey: 'AIzaSyABBVQvEcnbtQ5hQjLmAYwwGAew0BCh9EM',
+  apiKey: 'AIzaSyAqHR9KE3zTg621_Ee0DHfRzov18cVIFfc',
 };
 
 /*
