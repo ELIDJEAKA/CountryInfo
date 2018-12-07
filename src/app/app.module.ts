@@ -13,6 +13,7 @@ import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SingleCountryComponent } from './single-country/single-country.component';
 import { SearchOptionComponent } from './search-option/search-option.component';
+import { ChartsComponent } from './charts/charts.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SearchOptionComponent } from './search-option/search-option.component';
     DashboardComponent,
     AllCountriesComponent,
     SingleCountryComponent,
-    SearchOptionComponent
+    SearchOptionComponent,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,14 @@ import { SearchOptionComponent } from './search-option/search-option.component';
       {
         path: 'country-details/:name',
         component: SingleCountryComponent
+      }
+      {
+        path: 'search-option',
+        component: SearchOptionComponent
+      },
+      {
+        path: 'charts-stat',
+        component: ChartsComponent
       }
     ])
   ],
