@@ -179,42 +179,9 @@
                 <div class="col-lg-12">
                   <div class="project-table">
                     <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th class="text-center txt-primary pro-pic">Photo</th>
-                            <th class="text-center txt-primary">Client</th>
-                            <th class="text-center txt-primary">Start Date</th>
-                            <th class="text-center txt-primary">End Date</th>
-                            <th class="text-center txt-primary">Status</th>
-                            <th class="text-center txt-primary">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody class="text-center">
-                          <tr>
-                            <td>
-                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                            </td>
-                            <td>Web Consultant</td>
-                            <td>Oct 25th, 2014</td>
-                            <td>Oct 25th, 2015</td>
-                            <td class="text-center">
-                              <span class="label label-success m-t-20">Finish</span>
-                            </td>
-                            <td class="faq-table-btn">
-                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                                <i class="icofont icofont-ui-edit"></i>
-                              </button>
-                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                                <i class="icofont icofont-eye-alt"></i>
-                              </button>
-                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                                <i class="icofont icofont-ui-delete"></i>
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <agm-map [latitude]="lat" [longitude]="lng">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                      </agm-map>
                       <!-- end of table -->
                     </div>
                     <!-- end of table responsive -->

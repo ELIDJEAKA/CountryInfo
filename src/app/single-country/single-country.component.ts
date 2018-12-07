@@ -8,16 +8,19 @@ import { CountriesService } from '../services/countries.service';
 })
 export class SingleCountryComponent implements OnInit {
   country_name:string
-  country:any
+  country:any;
+  lat: number;
+  lng: number;
   constructor(private countriesService: CountriesService,private router:ActivatedRoute) { }
 
   ngOnInit() {
     this.country_name = this.router.snapshot.paramMap.get('name')
     console.log(this.country_name)
     this.countriesService.getCountryByName(this.country_name).subscribe((data) => {
-      console.log("country kdetail",data[0])
+      console.log("country detail",data[0])
       this.country = data[0];
-
+      this.lat = this.country.latlng[0]
+      this.lng = this.country.latlng[1]
     });
   }
 

@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
@@ -15,6 +16,8 @@ import { SingleCountryComponent } from './single-country/single-country.componen
 import { SearchOptionComponent } from './search-option/search-option.component';
 import { ChartsComponent } from './charts/charts.component';
 
+import { environment } from 'src/environments/environment';
+const API_KEY = environment.apiKey
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { ChartsComponent } from './charts/charts.component';
     HttpClientModule,
     FormsModule,
     Ng2SearchPipeModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAqHR9KE3zTg621_Ee0DHfRzov18cVIFfc'
+    }),
     RouterModule.forRoot([
       {
         path: '',
@@ -48,7 +54,7 @@ import { ChartsComponent } from './charts/charts.component';
       {
         path: 'country-details/:name',
         component: SingleCountryComponent
-      }
+      },
       {
         path: 'search-option',
         component: SearchOptionComponent
