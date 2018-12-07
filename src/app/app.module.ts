@@ -11,6 +11,8 @@ import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SingleCountryComponent } from './single-country/single-country.component';
+import { SearchOptionComponent } from './search-option/search-option.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     AdminMenuComponent,
     DashboardComponent,
-    AllCountriesComponent
+    AllCountriesComponent,
+    SingleCountryComponent,
+    SearchOptionComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,10 @@ import { HttpClientModule } from '@angular/common/http';
       {
         path: 'admin-all-countries',
         component: AllCountriesComponent
+      },
+      {
+        path: 'country-details/:name',
+        component: SingleCountryComponent
       }
     ])
   ],

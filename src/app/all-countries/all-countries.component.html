@@ -37,7 +37,7 @@
               <div class="col-lg-8 offset-lg-2 col-sm-6 offset-sm-1 col-xs-12">
                 <div class="md-group-add-on">
                   <span class="md-add-on">
-                    <i class="icofont icofont-list"></i>
+                    <i class="icofont icofont-world"></i>
                   </span>
                   <div class="md-input-wrapper">
                     <input type="text" id="search-data" class="md-form-control" [(ngModel)]="term">
@@ -71,28 +71,8 @@
                   </button>
                   <h5 class="modal-title">Code Explanation for Top Side Shadow </h5>
                 </div>
-                <!-- end of modal-header -->
-                <div class="modal-body">
-                  <pre class="brush: html;">
-
-				                      	
-
-				                      	/* Use for Top Shadow 3 */
-
-				                      	&lt;div class="col-lg-4"&gt;
-				                      		&lt;div class="p-20 z-depth-top-3 waves-effect" data-toggle="tooltip" data-placement="top" title=".z-depth-top-3"&gt;
-				                      			&lt;p class="text-sm-center"&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&lt;/p&gt;
-				                      		&lt;/div&gt;
-				                      	&lt;/div&gt;
-
-				                      	
-				                      </pre>
-                </div>
-                <!-- end of modal-body -->
               </div>
-              <!-- end of modal-content -->
             </div>
-            <!-- end of modal-dialog -->
           </div>
           <!-- end of modal -->          
            <div class="row card-block box-list">
@@ -101,16 +81,13 @@
                 <img class="card-img-top" src="{{country.flag}}" alt="Card image cap">
                 <div class="card-block card-country">
                   <h4 class="card-title">{{ country.name }}
-                    <!-- <a href="#">
-                      <i class="icofont icofont-question"></i>
-                    </a> -->
                   </h4>
                   <p class="card-text">Capital: {{country.capital}}<br/> Region: {{country.region}}</p>
                   <p class="card-text">
                     <!-- <button type="button" class="btn btn-primary waves-effect waves-light">Primary </button> -->
                   </p>
                 </div>
-                <button type="button" class="btn btn-primary btn-block waves-effect waves-light">More <i class="icofont icofont-bubble-right"></i></button>
+                <button type="button" (click)="onSelect(country)" class="btn btn-primary btn-block waves-effect waves-light">More <i class="icofont icofont-bubble-right"></i></button>
               </div>
             </div>
           </div>

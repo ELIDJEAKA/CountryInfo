@@ -1,0 +1,672 @@
+<div class="content-wrapper">
+  <!-- Container-fluid starts -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="main-header">
+        <h4>Profile</h4>
+        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+          <li class="breadcrumb-item">
+            <a href="index.html">
+              <i class="icofont icofont-home"></i>
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#!">Extras</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="profile.html">Profile</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <!-- Header end -->
+    <div class="row">
+      <div class="col-xl-3 col-lg-4">
+        <div class="card faq-left">
+          <div class="social-profile">
+            <img class="img-fluid" src="{{country.flag}}" alt="">
+            <!-- <div class="profile-hvr m-t-15">
+              <i class="icofont icofont-ui-edit p-r-10 c-pointer"></i>
+              <i class="icofont icofont-ui-delete c-pointer"></i>
+            </div> -->
+          </div>
+          <div class="card-block">
+            <h4 class="f-18 f-normal m-b-10 txt-primary">{{country.name|uppercase}}</h4>
+            <h5 class="f-14"></h5>
+            <p class="m-b-15"></p>
+            <ul>
+              
+              <li class="faq-contact-card">
+                <i class="icofont icofont-world"></i>
+                <a>Capital : {{country.capital}}</a>
+              </li>
+              <li class="faq-contact-card">
+                <i class="icofont icofont-email"></i>
+                <a>Region : {{country.region}}</a>
+              </li>
+              <li class="faq-contact-card">
+                <i class="icofont icofont-telephone"></i>
+                <a>Calling Codes : + {{country.callingCodes[0]|uppercase}}</a>
+              </li>
+              
+            </ul>
+            <div class="faq-profile-btn">
+              <button type="button" class="btn btn-primary waves-effect waves-light">Follows
+              </button>
+              <button type="button" class="btn btn-success waves-effect waves-light">Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of col-lg-3 -->
+
+      <!-- start col-lg-9 -->
+      <div class="col-xl-9 col-lg-8">
+        <!-- Nav tabs -->
+        <div class="tab-header">
+          <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#info" role="tab">Other Info</a>
+              <div class="slide"></div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#map" role="tab">Map</a>
+              <div class="slide"></div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#languages" role="tab">Languages</a>
+              <div class="slide"></div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#currencies" role="tab">Currencies</a>
+              <div class="slide"></div>
+            </li>
+          </ul>
+        </div>
+        <!-- end of tab-header -->
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="info" role="tabpanel">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-header-text">All informations about {{country.name}}</h5>
+                <!-- <button id="edit-btn" type="button" class="btn btn-primary waves-effect waves-light f-right">
+                  <i class="icofont icofont-edit"></i>
+                </button> -->
+              </div>
+              <div class="card-block">
+                <div class="view-info">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="general-info">
+                        <div class="row">
+                          <div class="col-lg-12 col-xl-6">
+                            <table class="table m-0">
+                              <tbody>
+                                <tr>
+                                  <th scope="row">Language</th>
+                                  <td>{{country.languages[0].name}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Alpha Code</th>
+                                  <td>{{country.alpha2Code}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Currencies</th>
+                                  <td>{{country.currencies[0].name }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Numeric Codes</th>
+                                  <td>{{country.numericCode}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Capital</th>
+                                  <td>{{country.capital}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- end of table col-lg-6 -->
+
+                          <div class="col-lg-12 col-xl-6">
+                            <table class="table">
+                              <tbody>
+                                <tr>
+                                  <th scope="row">Region</th>
+                                  <td>{{country.region}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Sub Region</th>
+                                  <td>{{country.subregion}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Population</th>
+                                  <td>{{country.population}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Area</th>
+                                  <td>{{country.area}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Timezones</th>
+                                  <td>{{country.timezones}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- end of table col-lg-6 -->
+                        </div>
+                        <!-- end of row -->
+                      </div>
+                      <!-- end of general info -->
+                    </div>
+                    <!-- end of col-lg-12 -->
+                  </div>
+                  <!-- end of row -->
+                </div>
+              </div>
+              <!-- end of card-block -->
+            </div>
+          </div>
+          
+          <div class="tab-pane" id="map" role="tabpanel">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-header-text">Project Details</h5>
+                <button type="button" class="btn btn-primary waves-effect waves-light f-right">
+                  + ADD PROJECTS</button>
+              </div>
+              <!-- end of card-header  -->
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="project-table">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="text-center txt-primary pro-pic">Photo</th>
+                            <th class="text-center txt-primary">Client</th>
+                            <th class="text-center txt-primary">Start Date</th>
+                            <th class="text-center txt-primary">End Date</th>
+                            <th class="text-center txt-primary">Status</th>
+                            <th class="text-center txt-primary">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody class="text-center">
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-success m-t-20">Finish</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-success">Finish</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-warning">Pending</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-success">Finish</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-danger">cancel</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-warning">Pending</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-success m-t-20">Finish</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-success m-t-20">Finish</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-warning">Pending</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-success m-t-20">Finish</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-warning">Pending</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- end of table -->
+                    </div>
+                    <!-- end of table responsive -->
+                  </div>
+                  <!-- end of project table -->
+                </div>
+                <!-- end of col-lg-12 -->
+              </div>
+              <!-- end of row -->
+            </div>
+            <!-- end of card-main -->
+          </div>
+
+          <div class="tab-pane" id="languages" role="tabpanel">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-header-text">Project Details</h5>
+                <button type="button" class="btn btn-primary waves-effect waves-light f-right">
+                  + ADD PROJECTS</button>
+              </div>
+              <!-- end of card-header  -->
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="project-table">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="text-center txt-primary pro-pic">Photo</th>
+                            <th class="text-center txt-primary">Client</th>
+                            <th class="text-center txt-primary">Start Date</th>
+                            <th class="text-center txt-primary">End Date</th>
+                            <th class="text-center txt-primary">Status</th>
+                            <th class="text-center txt-primary">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody class="text-center">
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-success m-t-20">Finish</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-success">Finish</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-warning">Pending</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- end of table -->
+                    </div>
+                    <!-- end of table responsive -->
+                  </div>
+                  <!-- end of project table -->
+                </div>
+                <!-- end of col-lg-12 -->
+              </div>
+              <!-- end of row -->
+            </div>
+            <!-- end of row -->
+          </div>
+          
+          <div class="tab-pane" id="currencies" role="tabpanel">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-header-text">Project Details</h5>
+                <button type="button" class="btn btn-primary waves-effect waves-light f-right">
+                  + ADD PROJECTS</button>
+              </div>
+              <!-- end of card-header  -->
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="project-table">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="text-center txt-primary pro-pic">Photo</th>
+                            <th class="text-center txt-primary">Client</th>
+                            <th class="text-center txt-primary">Start Date</th>
+                            <th class="text-center txt-primary">End Date</th>
+                            <th class="text-center txt-primary">Status</th>
+                            <th class="text-center txt-primary">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody class="text-center">
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-success m-t-20">Finish</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-success">Finish</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                            </td>
+                            <td>Web Consultant</td>
+                            <td>Oct 25th, 2014</td>
+                            <td>Oct 25th, 2015</td>
+                            <td class="text-center">
+                              <span class="label label-warning">Pending</span>
+                            </td>
+                            <td class="faq-table-btn">
+                              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="icofont icofont-ui-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="icofont icofont-eye-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="icofont icofont-ui-delete"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- end of table -->
+                    </div>
+                    <!-- end of table responsive -->
+                  </div>
+                  <!-- end of project table -->
+                </div>
+                <!-- end of col-lg-12 -->
+              </div>
+              <!-- end of row -->
+            </div>
+            <!-- end of row -->
+          </div>
+    
+
+        </div>
+        <!-- end of main tab content -->
+      </div>
+    </div>
+
+  </div>
+  <!-- Container-fluid ends -->
+</div>

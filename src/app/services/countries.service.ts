@@ -12,4 +12,8 @@ export class CountriesService {
     getAllCountries(url) {
         return this.http.get(`${API_URL}/${url}`);
     }
+    
+    getCountryByName(name) {
+        return this.http.get(`${API_URL}/name/${name}?fullText=true`);
+    }
 }
