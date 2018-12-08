@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AgmCoreModule } from '@agm/core';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
@@ -33,6 +34,7 @@ const API_KEY = environment.apiKey
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ChartsModule,
     Ng2SearchPipeModule,
     AgmCoreModule.forRoot({
       apiKey: API_KEY

@@ -1,3 +1,75 @@
-<p>
-  charts works!
-</p>
+<!-- Sidebar chat end-->
+<div class="content-wrapper">
+  <!-- Container-fluid starts -->
+  <div class="container-fluid">
+    <!-- Header Starts -->
+    <div class="row">
+      <div class="main-header">
+        <h4>Float Chart</h4>
+        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+          <li class="breadcrumb-item">
+            <a href="index.html">
+              <i class="icofont icofont-home"></i>
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#!"> Charts </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="chart-float.html">Float Chart</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <!-- Header end -->
+
+    <!-- Row Starts -->
+    <div class="row">
+      <!-- Categories chart start -->
+      <div class="col-md-8" *ngIf="findChartsRegion">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-header-text">COUNTRIES BY Regions</h5>
+          </div>
+          <div class="card-block">
+            
+              <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Stracking chart start -->
+      <div class="col-md-12">
+        <div class="card" *ngIf="findChartsCurrencies">
+          <div class="card-header">
+            <h5 class="card-header-text">Countries By currencies</h5>
+          </div>
+          <div class="card-block">
+            <canvas baseChart [data]="BChartData" [labels]="BChartLabels" [chartType]="BChartType" (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+      </div>
+      <!-- Stracking chart end -->
+
+      <!-- Pie chart(Without legend) start -->
+      <div class="col-md-12">
+        <div class="card" *ngIf="findChartsLanguague">
+          <div class="card-header">
+            <h5 class="card-header-text">Countries by Languages</h5>
+          </div>
+          <div class="card-block">
+            <canvas baseChart [data]="LChartData" [labels]="LChartLabels" [chartType]="LChartType" (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+      </div>
+      <!-- Pie chart(Without legend) end -->
+
+      
+      <!-- Donut Hole end -->
+    </div>
+  </div>
+  <!-- Container-fluid ends -->
+</div>
