@@ -1,0 +1,60 @@
+<section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+  <!-- Container-fluid starts -->
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-sm-12">
+        <div class="login-card card-block">
+          <form class="md-float-material" #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+            <div class="text-center">
+              <img src="assets/images/logo-blue.png" alt="logo">
+            </div>
+            <h3 class="text-center txt-primary">
+              Sign In to your account
+            </h3>
+            <div class="md-input-wrapper">
+              <input type="email" class="md-form-control" name="email" (ngModel)="email" required/>
+              <label>Email</label>
+            </div>
+            <div class="md-input-wrapper">
+              <input type="password" class="md-form-control" name="password" (ngModel)="password" required/>
+              <label>Password</label>
+            </div>
+            <div class="row">
+              <div class="col-xs-10 offset-xs-1">
+                <button type="submit" [disabled]="!formData.valid" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">LOGIN</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-10 offset-xs-1">
+                <button type="button" (click)="loginFb()" class="btn btn-facebook btn-md btn-block waves-effect waves-light text-center m-b-20">
+                  <span>
+                  <i class="icofont icofont-social-facebook" style="color:#FFF;"></i>
+                </span>LOGIN WITH FACEBOOK</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-10 offset-xs-1">
+                <button type="button" (click)="loginGoogle()" class="btn btn-google-plus btn-md btn-block waves-effect text-center m-b-20">
+                  <span>
+                    <i class="icofont icofont-social-google-plus" style="color:#FFF;"></i>
+                  </span>LOGIN WITH GOOGLE+
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-12 col-xs-12 text-center">
+              <span class="text-muted">Don't have an account?</span>
+              <a [routerLink]="['/register']" class="f-w-600 p-l-5">Sign up Now</a>
+            </div>
+            <!-- </div> -->
+          </form>
+          <!-- end of form -->
+        </div>
+        <!-- end of login-card -->
+      </div>
+      <!-- end of col-sm-12 -->
+    </div>
+    <!-- end of row -->
+  </div>
+  <!-- end of container-fluid -->
+</section>

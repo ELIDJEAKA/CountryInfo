@@ -1,2 +1,15 @@
-<app-admin-menu></app-admin-menu>
+<!-- <app-admin-menu></app-admin-menu> -->
+
+<div *ngIf="authentification; then admin else basic">
+    <app-admin-menu></app-admin-menu>
+</div>
+<ng-template #admin>
+    <app-admin-menu></app-admin-menu>
+</ng-template>
+<ng-template #basic>
+    <app-basic-template></app-basic-template>
+</ng-template>
+
 <router-outlet></router-outlet>
+<!-- <app-basic-template></app-basic-template>
+<router-outlet></router-outlet> -->

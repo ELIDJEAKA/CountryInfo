@@ -7,6 +7,9 @@ import { CommonModule } from '@angular/common';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AgmCoreModule } from '@agm/core';
 import { ChartsModule } from 'ng2-charts';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
@@ -18,6 +21,15 @@ import { SearchOptionComponent } from './search-option/search-option.component';
 import { ChartsComponent } from './charts/charts.component';
 
 import { environment } from 'src/environments/environment';
+// import { AuthGuard } from './auth.guard'
+// import { NoauthGuard } from './noauth.guard'
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BasicTemplateComponent } from './basic-template/basic-template.component';
+import { UsersService } from 'src/app/services/users.service';
+import { AuthguardGuard } from 'src/app/auth.guard';
+import { NoAuthguardGuard } from 'src/app/noauth.guard';
 const API_KEY = environment.apiKey
 
 @NgModule({
@@ -28,11 +40,18 @@ const API_KEY = environment.apiKey
     AllCountriesComponent,
     SingleCountryComponent,
     SearchOptionComponent,
-    ChartsComponent
+    ChartsComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    BasicTemplateComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     FormsModule,
     ChartsModule,
     Ng2SearchPipeModule,
@@ -47,27 +66,47 @@ const API_KEY = environment.apiKey
       },
       {
         path: 'admin-dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthguardGuard]
       },
       {
         path: 'admin-all-countries',
-        component: AllCountriesComponent
+        component: AllCountriesComponent,
+        canActivate: [AuthguardGuard]
       },
       {
         path: 'country-details/:name',
-        component: SingleCountryComponent
+        component: SingleCountryComponent,
+        canActivate: [AuthguardGuard]
       },
       {
         path: 'search-option',
-        component: SearchOptionComponent
+        component: SearchOptionComponent,
+        canActivate: [AuthguardGuard]
       },
       {
         path: 'charts-stat',
-        component: ChartsComponent
+        component: ChartsComponent,
+        canActivate: [AuthguardGuard]
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+        canActivate: [NoAuthguardGuard]
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
+        canActivate: [NoAuthguardGuard]
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        canActivate: [AuthguardGuard]
       }
     ])
   ],
-  providers: [],
+  providers: [UsersService,AuthguardGuard,NoAuthguardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

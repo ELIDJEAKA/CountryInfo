@@ -15,7 +15,7 @@
       <div class="navbar-custom-menu f-right">
         <div class="upgrade-button m-r-10">
           <a href="https://themeforest.net/item/able-pro-responsive-bootstrap-4-admin-template/19300403?ref=phoenixcoded" class="icon-circle txt-white btn btn-sm btn-warning upgrade-button">
-            <span>Upgrade To Pro</span>
+            <span>About Developper</span>
           </a>
         </div>
         <ul class="top-nav">
@@ -90,11 +90,14 @@
           <!-- User Menu-->
           <li class="dropdown">
             <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
-              <span>
+              <span *ngIf='photo_bool'>
+                <img class="img-circle " src="{{userData.photoURL}}" style="width:40px;" alt="User Image">
+              </span>
+              <span *ngIf='!photo_bool'>
                 <img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;" alt="User Image">
               </span>
-              <span>John
-                <b>Doe</b>
+              <span>
+                <b>{{ userData.displayName }}</b>
                 <i class=" icofont icofont-simple-down"></i>
               </span>
 
@@ -120,7 +123,7 @@
                   <i class="icon-lock"></i> Lock Screen</a>
               </li>
               <li>
-                <a href="#!">
+                <a href="javascript:void(0)" (click)="logout()">
                   <i class="icon-logout"></i> Logout</a>
               </li>
 
@@ -190,12 +193,15 @@
     <section class="sidebar" id="sidebar-scroll">
 
       <div class="user-panel">
-        <div class="f-left image">
+        <div class="f-left image" *ngIf='photo_bool'>
+          <img src="{{userData.photoURL}}" *ngIf='photo_bool' alt="User Image" class="img-circle">
+        </div>
+        <div class="f-left image" *ngIf='!photo_bool'>
           <img src="assets/images/avatar-1.png" alt="User Image" class="img-circle">
         </div>
         <div class="f-left info">
-          <p>John Doe</p>
-          <p class="designation">UX Designer
+          <p>{{ userData.displayName||userData.email }}</p>
+          <p class="designation">{{ userData.phoneNumber }}
             <i class="icofont icofont-caret-down m-l-5"></i>
           </p>
         </div>
@@ -210,14 +216,7 @@
           </a>
         </li>
         <li>
-          <a class="waves-effect waves-dark" href="javascript:void(0)">
-            <i class="icon-settings"></i>
-            <span class="menu-text">Settings</span>
-            <span class="selected"></span>
-          </a>
-        </li>
-        <li>
-          <a class="waves-effect waves-dark" href="javascript:void(0)">
+          <a class="waves-effect waves-dark" href="javascript:void(0)" (click)="logout()">
             <i class="icon-logout"></i>
             <span class="menu-text">Logout</span>
             <span class="selected"></span>
@@ -255,60 +254,6 @@
             <i class="icon-chart"></i>
             <span>Charts</span>
           </a>
-        </li>
-        
-        <li class="nav-level">Menu Level</li>
-
-        <li class="treeview">
-          <a class="waves-effect waves-dark" href="#!">
-            <i class="icofont icofont-company"></i>
-            <span>Menu Level 1</span>
-            <i class="icon-arrow-down"></i>
-          </a>
-          <ul class="treeview-menu">
-            <li>
-              <a class="waves-effect waves-dark" href="#!">
-                <i class="icon-arrow-right"></i>
-                Level Two
-              </a>
-            </li>
-            <li class="treeview">
-              <a class="waves-effect waves-dark" href="#!">
-                <i class="icon-arrow-right"></i>
-                <span>Level Two</span>
-                <i class="icon-arrow-down"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li>
-                  <a class="waves-effect waves-dark" href="#!">
-                    <i class="icon-arrow-right"></i>
-                    Level Three
-                  </a>
-                </li>
-                <li>
-                  <a class="waves-effect waves-dark" href="#!">
-                    <i class="icon-arrow-right"></i>
-                    <span>Level Three</span>
-                    <i class="icon-arrow-down"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li>
-                      <a class="waves-effect waves-dark" href="#!">
-                        <i class="icon-arrow-right"></i>
-                        Level Four
-                      </a>
-                    </li>
-                    <li>
-                      <a class="waves-effect waves-dark" href="#!">
-                        <i class="icon-arrow-right"></i>
-                        Level Four
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
         </li>
       </ul>
     </section>
