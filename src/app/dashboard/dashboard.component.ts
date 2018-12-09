@@ -24,8 +24,8 @@ export class DashboardComponent implements OnInit {
       this.countriesService.getCountryByCallingCode(this.country_calling_code).subscribe((response)=>{
           this.country = response[0]
           //console.log("longlat ", response)
-          this.lat = this.country.latlng[0]
-          this.lng = this.country.latlng[1]
+        this.lat = this.personnal_data.country.latlng[0]
+        this.lng = this.personnal_data.country.latlng[1]
       });
     });
 

@@ -98,6 +98,7 @@ export class ChartsComponent implements OnInit {
       this.countries.forEach(country=>{ 
         country.currencies.forEach(currency => {
               let foundCurrency = this.cur.findIndex(el=>{
+                
                 return el.name === currency.name
               })
               if (foundCurrency == -1){
@@ -110,10 +111,11 @@ export class ChartsComponent implements OnInit {
               }
           });
       })
-      this.lang.forEach(element => {
+      this.cur.forEach(element => {
         this.BChartLabels.push(element.name)
         this.BChartData.push(element.nombre)
       })
+      console.log(this.BChartLabels)
       this.findChartsCurrencies = true;
       return this.cur
     })
