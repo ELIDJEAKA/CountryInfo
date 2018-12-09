@@ -8,6 +8,7 @@ import { CountriesService } from '../services/countries.service';
 })
 export class AllCountriesComponent implements OnInit {
 
+  term :any;
   countries: any;
   constructor(private countriesService: CountriesService,private router:Router) { }
 

@@ -10,7 +10,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  email: string;
+  password: string;
   error: any;
   constructor(public af: AngularFireAuth, private location: Location,private router: Router, private userService: UsersService) { }
 

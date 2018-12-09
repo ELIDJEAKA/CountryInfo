@@ -10,7 +10,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  email:string;
+  password:string;
   error: any;
   constructor(public af: AngularFireAuth, private router: Router, private userService: UsersService, private location: Location) { }
 
