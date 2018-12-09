@@ -29,7 +29,6 @@ export class AdminMenuComponent implements OnInit {
     }else{
       this.photo_bool = true
     }
-    console.log("this.photo_bool : ",this.photo_bool)
   }
 
   logout(){
