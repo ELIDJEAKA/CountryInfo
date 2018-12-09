@@ -24,11 +24,12 @@ export class AdminMenuComponent implements OnInit {
 
   ngOnInit() {
     this.userData = JSON.parse(localStorage.getItem('user'))
-    if (this.userData.phoneNumber===null){
+    if (this.userData.photoURL===null){
       this.photo_bool = false
     }else{
       this.photo_bool = true
     }
+    console.log("this.photo_bool : ",this.photo_bool)
   }
 
   logout(){
