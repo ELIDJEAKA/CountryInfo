@@ -38,10 +38,10 @@
             </a>
             <ul class="dropdown-menu settings-menu">
               
-              <li>
+              <!-- <li>
                 <a href="profile.html">
                   <i class="icon-user"></i> Profile</a>
-              </li>
+              </li> -->
               
               <li>
                 <a href="javascript:void(0)" (click)="logout()">
@@ -76,13 +76,13 @@
       </div>
       <!-- sidebar profile Menu-->
       <ul class="nav sidebar-menu extra-profile-list">
-        <li>
+        <!-- <li>
           <a class="waves-effect waves-dark" href="profile.html">
             <i class="icon-user"></i>
             <span class="menu-text">View Profile</span>
             <span class="selected"></span>
           </a>
-        </li>
+        </li> -->
         <li>
           <a class="waves-effect waves-dark" href="javascript:void(0)" (click)="logout()">
             <i class="icon-logout"></i>
@@ -94,7 +94,7 @@
       <!-- Sidebar Menu-->
       <ul class="sidebar-menu">
         <li class="nav-level">Navigation</li>
-        <li class="active treeview">
+        <li class="treeview" (click)="clickEventD()" [ngClass]="statusD ? 'active' : ''">
           <a class="waves-effect waves-dark" [routerLink]="['/admin-dashboard']">
             <i class="icon-speedometer"></i>
             <span> Dashboard</span>
@@ -102,7 +102,7 @@
         </li>
         <li class="nav-level">Countries Options</li>
 
-        <li class="treeview">
+        <li class="treeview" (click)="clickEventA()" [ngClass]="statusA ? 'active' : ''">
           <a class="waves-effect waves-dark" [routerLink]="['/admin-all-countries']">
             <i class="icon-list"></i>
             <span>All Countries</span>
@@ -117,7 +117,7 @@
 
         <li class="nav-level">Countries Stats</li>
 
-        <li class="treeview">
+        <li class="treeview" (click)="clickEventC()" [ngClass]="statusC ? 'active' : ''">
           <a class="waves-effect waves-dark" [routerLink]="['/charts-stat']">
             <i class="icon-chart"></i>
             <span>Charts</span>

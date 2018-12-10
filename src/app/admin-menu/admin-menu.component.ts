@@ -9,7 +9,9 @@ import { Location } from '@angular/common';
   styleUrls: ['./admin-menu.component.css']
 })
 export class AdminMenuComponent implements OnInit {
-
+  statusD: boolean = false;
+  statusA: boolean = false;
+  statusC: boolean = false;
   constructor(private userService:UsersService,private router:Router, private location:Location) { }
   public userData = {
     'email': '',
@@ -23,12 +25,32 @@ export class AdminMenuComponent implements OnInit {
   photo_default ='assets/images/avatar-1.png'
 
   ngOnInit() {
+    
     this.userData = JSON.parse(localStorage.getItem('user'))
     if (this.userData.photoURL===null){
       this.photo_bool = false
     }else{
       this.photo_bool = true
     }
+  }
+
+
+  clickEventD() {
+    this.statusD = true;
+    this.statusA = false;
+    this.statusC = false;
+  }
+
+  clickEventA() {
+    this.statusD = false;
+    this.statusA = true;
+    this.statusC = false;
+  }
+
+  clickEventC() {
+    this.statusC = true;
+    this.statusA = false;
+    this.statusD = false;
   }
 
   logout(){
