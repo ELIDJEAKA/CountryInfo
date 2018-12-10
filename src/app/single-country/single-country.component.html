@@ -3,18 +3,18 @@
   <div class="container-fluid">
     <div class="row">
       <div class="main-header">
-        <h4>Profile</h4>
+        <h4>Single Country Information</h4>
         <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
           <li class="breadcrumb-item">
-            <a href="index.html">
+            <a [routerLink]="['/admin-dashboard']">
               <i class="icofont icofont-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="#!">Extras</a>
+            <a [routerLink]="['/admin-all-countries']">All countries</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="profile.html">Profile</a>
+            <a href="#">Single Country</a>
           </li>
         </ol>
       </div>
@@ -47,12 +47,6 @@
               </li>
               
             </ul>
-            <div class="faq-profile-btn">
-              <button type="button" class="btn btn-primary waves-effect waves-light">Follows
-              </button>
-              <button type="button" class="btn btn-success waves-effect waves-light">Message
-              </button>
-            </div>
           </div>
         </div>
       </div>
