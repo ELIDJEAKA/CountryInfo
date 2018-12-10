@@ -4,6 +4,8 @@ import { DashboardComponent } from './dashboard.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AgmCoreModule } from '@agm/core';
 import { MapsAPILoader } from '@agm/core';
+import { environment } from 'src/environments/environment';
+const API_KEY = environment.apiKey
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
@@ -14,7 +16,17 @@ describe('DashboardComponent', () => {
       imports: [
         RouterTestingModule,
         HttpClientModule,
-        AgmCoreModule
+        AgmCoreModule.forRoot({
+          apiKey: API_KEY
+        })
+      ],
+      providers: [
+        {
+          provide: MapsAPILoader,
+          // useValue: {
+          //   load: jest.fn().mockReturnValue(new Promise(resolve => resolve(true)))
+          // }
+        }
       ]
     })
     .compileComponents();
