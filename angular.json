@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "OperanticDevTest"
+  "defaultProject": "OperanticDevTest",
+  "cli": {
+    "analytics": "53aae3c7-1095-4373-8a77-325f609dfc3f"
+  }
 }
